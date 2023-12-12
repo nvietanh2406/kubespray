@@ -382,7 +382,7 @@ kubeadm_patches:
   dest_dir: "{{ kube_config_dir }}/patches"
 
 # DatX
-kube_kubeadm_apiserver_extra_args:
-  service-account-issuer: api
-  service-account-signing-key-file: /etc/kubernetes/ssl/sa.key
-  service-account-api-audiences: api
+# kube_kubeadm_apiserver_extra_args:
+#   service-account-issuer: api
+#   service-account-signing-key-file: /etc/kubernetes/ssl/sa.key
+#   service-account-api-audiences: api
