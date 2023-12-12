@@ -19,6 +19,8 @@ ssh-keygen -t rsa -b 4096 -C "root@hc-os-ansible01"
 
 1.4 Copy ansible's ssh key:
 Copy Ansible's public key to all node (root user)
+Eg:
+echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDLM1J/F7GlSqzOBYBAJMdKLYKPNDvlaHyRdMrLW8+x5pBIB+FtAJgSUnIaCTWrXk5yJnCVYcZMqVnAyAeyd5j2E9egFj3mh4EsdlHbM99Ke4YwXGkLkuX8ttM67AISM805hLhHgOz60DFOZ2alacDv1s0nYOrt/1vEOuaEaTukweFrhlJWDtbYahYnFL3xlDHVGSXHV57uARiQlpRO5R1l+DHg7wjKvbmyjp9V+mazxNY2uFpjIn9V7ArLwOb1RMCHcuxDb5Ry1T1L8eVKQI45h5tz41Ttj9jGcoy63TEH8aApjH5MPZR71PNmrAQT4wvC8OuvYuc3ALUjqcgnNpm03GyrqgcmS0FH8LywZccx2nzQm6ySyCd8dOQL01D78PyFWO+7slxeptbsUrGjNGnQ3J2Eo+IMbAv7zPPdjOnfmvEzvVy5ce513VobjHaPy2xcKV+WExMV1DXxz2vRvZkH9BY3GnyKOGZ71VfNJHKpuiBTt6UsbYTpbLbPHXT0k6yT2tkKPPKITNxInLqlznxrHLWNGtN6PXzECY4ujtTEZtR/pekINKj3wnM/O3HNF1l4/Ay4x03fI95QWckaHDRVL9h7TreH5IauzPP+YJOyCUY3L9BRq0tT3DglZM98FhsuCMnILQNF/dYZnM96F5lu3635P2zFKMYphVfv5az8Hw== root@hc-os-ansible01" >> /root/.ssh/authorized_keys
 
 # Do on worker node
 2.1 Install longhorn requirements:
