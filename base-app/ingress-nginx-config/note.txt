@@ -1,0 +1,6 @@
+# Install argocd Ingess Nginx
+kubectl create -f argocd argocd-ingress-nginx.yaml
+
+# Install Longhorn:
+kubectl -n longhorn-system create secret generic basic-auth --from-file=longhorn/auth
+kubectl create -f longhorn/02-longhorn-ingress-nginx.yaml

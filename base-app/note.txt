@@ -1,0 +1,2 @@
+#Install Longhorn
+helm install longhorn longhorn -f longhorn/values.yaml --namespace longhorn-system --create-namespace
