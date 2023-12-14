@@ -1917,7 +1917,9 @@ server:
     # -- Enable an ingress resource for the Argo CD server
     enabled: true
     # -- Additional ingress annotations
-    annotations: {}
+    annotations:
+      # prevent the controller from redirecting (308) to HTTPS
+      nginx.ingress.kubernetes.io/ssl-redirect: 'false'
     # -- Additional ingress labels
     labels: {}
     # -- Defines which ingress controller will implement the resource
