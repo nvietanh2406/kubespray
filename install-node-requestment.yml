@@ -1,0 +1,15 @@
+---
+- name: Setup node requestment
+  hosts: all
+  become: true
+  tasks:
+    - name: Run multiple commands
+      shell: |
+        sudo apt update && apt install nfs-common open-iscsi -y
+        sudo systemctl enable iscsid rpcbind --now
+        systemctl disable multipathd
+        systemctl stop multipathd
+        mkdir -p /data/longhorn-pvc
+        sed -i 's/--web.listen-address=:9100/--web.listen-address=:9101/' /etc/systemd/system/node_exporter.service
+        systemctl daemon-reload
+        systemctl restart node_exporter.service
