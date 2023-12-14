@@ -7,3 +7,4 @@ netaddr==0.8.0
 pbr==5.11.1
 ruamel.yaml==0.17.31
 ruamel.yaml.clib==0.2.7
+ansible-core=2.14.11
