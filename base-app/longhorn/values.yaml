@@ -233,13 +233,13 @@ longhornUI:
 
 ingress:
   ## Set to true to enable ingress record generation
-  enabled: false
+  enabled: true
 
   ## Add ingressClassName to the Ingress
   ## Can replace the kubernetes.io/ingress.class annotation on v1.18+
-  ingressClassName: ~
+  ingressClassName: nginx
 
-  host: sslip.io
+  host: longhorn-hc.datxasia.com
 
   ## Set this to true in order to enable TLS on the ingress record
   tls: false
@@ -263,8 +263,14 @@ ingress:
   ##
   ## If tls is set to true, annotation ingress.kubernetes.io/secure-backends: "true" will automatically be set
   annotations:
-  #  kubernetes.io/ingress.class: nginx
-  #  kubernetes.io/tls-acme: true
+    # type of authentication
+    nginx.ingress.kubernetes.io/auth-type: basic
+    # prevent the controller from redirecting (308) to HTTPS
+    nginx.ingress.kubernetes.io/ssl-redirect: 'false'
+    # name of the secret that contains the user/password definitions
+    nginx.ingress.kubernetes.io/auth-secret: basic-auth
+    # message to display with an appropriate context why the authentication is required
+    nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required '
 
   secrets:
   ## If you're providing your own certificates, please use this to add the certificates as secrets
