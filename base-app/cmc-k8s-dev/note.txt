@@ -5,3 +5,17 @@ helm install longhorn longhorn -f longhorn/values.yaml --namespace longhorn-syst
 #2. Install ArgoCD
 helm install argocd argocd -f argocd/values.yaml --namespace argocd --create-namespace
 #ArgoCD user: admin / 6dea16e5-a9e3-4d1e-9d1a-c4a984fea37e
+
+# Create argocd new app
+argocd login 10.0.1.55:30080 --username admin --password 6dea16e5-a9e3-4d1e-9d1a-c4a984fea37e --insecure
+argocd repo add https://git.datx.com.vn/datx-k8s/k8s-intervpc.git --username git --password abc --insecure-skip-server-verification
+
+argocd app create argocd-apps --repo https://git.datx.com.vn/datx-k8s/k8s-intervpc.git \
+--path helm-charts/argocd-apps \
+--revision hoangcau \
+--self-heal \
+--auto-prune \
+--sync-policy auto \
+--values values.yaml \
+--dest-namespace default \
+--dest-server https://kubernetes.default.svc 
