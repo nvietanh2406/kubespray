@@ -1918,8 +1918,8 @@ server:
     enabled: true
     # -- Additional ingress annotations
     annotations:
-      # prevent the controller from redirecting (308) to HTTPS
-      nginx.ingress.kubernetes.io/ssl-redirect: 'false'
+      nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+      nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
     # -- Additional ingress labels
     labels: {}
     # -- Defines which ingress controller will implement the resource
