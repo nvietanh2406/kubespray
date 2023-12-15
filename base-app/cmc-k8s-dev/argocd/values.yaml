@@ -1930,7 +1930,7 @@ server:
     ## Hostnames must be provided if Ingress is enabled.
     ## Secrets must be manually created in the namespace
     hosts:
-      - argocd-cmc.datxasia.com
+      - dev-argocd.datxstg.com
 
     # -- List of ingress paths
     paths:
