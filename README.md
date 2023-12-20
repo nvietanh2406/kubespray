@@ -1,3 +1,15 @@
+# VM Information
+| K8S Role    | IP Addres     | Hostname              | vCPU    | RAM       | Disk  |
+|-------------| --------------|-----------------------|---------|-----------|-------|
+| Master      | 10.0.1.111    | k8s-dev02-master01    | 4vCPU   | 8G RAM    | 100G  |
+| Master      | 10.0.1.112    | k8s-dev02-master02    | 4vCPU   | 8G RAM    | 100G  |
+| Master      | 10.0.1.113    | k8s-dev02-master03    | 4vCPU   | 8G RAM    | 100G  |
+| Worker      | 10.0.1.121    | k8s-dev02-worker01    | 16vCPU  | 48G RAM   | 300G  |
+| Worker      | 10.0.1.122    | k8s-dev02-worker02    | 16vCPU  | 48G RAM   | 300G  |
+| Worker      | 10.0.1.123    | k8s-dev02-worker03    | 16vCPU  | 48G RAM   | 300G  |
+| Worker      | 10.0.1.124    | k8s-dev02-worker04    | 16vCPU  | 48G RAM   | 300G  |
+| Worker      | 10.0.1.125    | k8s-dev02-worker05    | 16vCPU  | 48G RAM   | 300G  |
+
 # I. Prerequisites
 ## 1. Install kubectl
 ```shell
