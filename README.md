@@ -1,5 +1,5 @@
 # VM Information
-| Server Role | IP Addres     | Hostname              | vCPU    | RAM       | Disk  |
+| K8S Role    | IP Addres     | Hostname              | vCPU    | RAM       | Disk  |
 |-------------| --------------|-----------------------|---------|-----------|-------|
 | Master      | 10.0.1.111    | k8s-dev02-master01    | 4vCPU   | 8G RAM    | 100G  |
 | Master      | 10.0.1.112    | k8s-dev02-master02    | 4vCPU   | 8G RAM    | 100G  |
