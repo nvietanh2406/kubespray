@@ -1,55 +1,55 @@
 all:
   hosts:
-    node1:
-      ansible_host: 10.0.1.41
-      ip: 10.0.1.41
-      access_ip: 10.0.1.41
-    node2:
-      ansible_host: 10.0.1.42
-      ip: 10.0.1.42
-      access_ip: 10.0.1.42
-    node3:
-      ansible_host: 10.0.1.43
-      ip: 10.0.1.43
-      access_ip: 10.0.1.43
-    node4:
-      ansible_host: 10.0.1.51
-      ip: 10.0.1.51
-      access_ip: 10.0.1.51
-    node5:
-      ansible_host: 10.0.1.52
-      ip: 10.0.1.52
-      access_ip: 10.0.1.52
-    node6:
-      ansible_host: 10.0.1.53
-      ip: 10.0.1.53
-      access_ip: 10.0.1.53
-    node7:
-      ansible_host: 10.0.1.54
-      ip: 10.0.1.54
-      access_ip: 10.0.1.54
-    node8:
-      ansible_host: 10.0.1.55
-      ip: 10.0.1.55
-      access_ip: 10.0.1.55
+    k8s-dev02-master01:
+      ansible_host: 10.0.1.111
+      ip: 10.0.1.111
+      access_ip: 10.0.1.111
+    k8s-dev02-master02:
+      ansible_host: 10.0.1.112
+      ip: 10.0.1.112
+      access_ip: 10.0.1.112
+    k8s-dev02-master03:
+      ansible_host: 10.0.1.113
+      ip: 10.0.1.113
+      access_ip: 10.0.1.113
+    k8s-dev02-worker01:
+      ansible_host: 10.0.1.121
+      ip: 10.0.1.121
+      access_ip: 10.0.1.121
+    k8s-dev02-worker02:
+      ansible_host: 10.0.1.122
+      ip: 10.0.1.122
+      access_ip: 10.0.1.122
+    k8s-dev02-worker03:
+      ansible_host: 10.0.1.123
+      ip: 10.0.1.123
+      access_ip: 10.0.1.123
+    k8s-dev02-worker04:
+      ansible_host: 10.0.1.124
+      ip: 10.0.1.124
+      access_ip: 10.0.1.124
+    k8s-dev02-worker05:
+      ansible_host: 10.0.1.125
+      ip: 10.0.1.125
+      access_ip: 10.0.1.125
   children:
     kube_control_plane:
       hosts:
-        node1:
-        node2:
-        node3:
+        k8s-dev02-master01:
+        k8s-dev02-master02:
+        k8s-dev02-master03:
     kube_node:
       hosts:
-        node4:
-        node5:
-        node6:
-        node7:
-        node8:
+        k8s-dev02-worker01:
+        k8s-dev02-worker02:
+        k8s-dev02-worker03:
+        k8s-dev02-worker04:
+        k8s-dev02-worker05:
     etcd:
       hosts:
-        node1:
-        node2:
-        node3:
+        k8s-dev02-master01:
+        k8s-dev02-master02:
+        k8s-dev02-master03:
     k8s_cluster:
       children:
         kube_control_plane:
