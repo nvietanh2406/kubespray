@@ -1,4 +1,0 @@
-# Install Longhorn
-helm install longhorn longhorn -f longhorn/values.yaml --namespace longhorn-system --create-namespace
-# Install ArgoCD
-helm install argocd argocd -f argocd/values.yaml --namespace argocd --create-namespace
