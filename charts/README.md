@@ -15,7 +15,7 @@
 ## 1. ArgoCD
 ### Login to the ArgoCD server
 ```
-argocd login 10.0.1.55:30080 \
+argocd login 10.0.1.122:30080 \
 --username admin \
 --password 6dea16e5-a9e3-4d1e-9d1a-c4a984fea37e \
 --insecure
