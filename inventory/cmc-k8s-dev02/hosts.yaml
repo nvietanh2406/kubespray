@@ -1,37 +1,37 @@
 all:
   hosts:
     k8s-dev02-master01:
-      ansible_host: 10.0.1.111
-      ip: 10.0.1.111
-      access_ip: 10.0.1.111
+      ansible_host: 10.0.1.131
+      ip: 10.0.1.131
+      access_ip: 10.0.1.131
     k8s-dev02-master02:
-      ansible_host: 10.0.1.112
-      ip: 10.0.1.112
-      access_ip: 10.0.1.112
+      ansible_host: 10.0.1.132
+      ip: 10.0.1.132
+      access_ip: 10.0.1.132
     k8s-dev02-master03:
-      ansible_host: 10.0.1.113
-      ip: 10.0.1.113
-      access_ip: 10.0.1.113
+      ansible_host: 10.0.1.133
+      ip: 10.0.1.133
+      access_ip: 10.0.1.133
     k8s-dev02-worker01:
-      ansible_host: 10.0.1.121
-      ip: 10.0.1.121
-      access_ip: 10.0.1.121
+      ansible_host: 10.0.1.141
+      ip: 10.0.1.141
+      access_ip: 10.0.1.141
     k8s-dev02-worker02:
-      ansible_host: 10.0.1.122
-      ip: 10.0.1.122
-      access_ip: 10.0.1.122
+      ansible_host: 10.0.1.142
+      ip: 10.0.1.142
+      access_ip: 10.0.1.142
     k8s-dev02-worker03:
-      ansible_host: 10.0.1.123
-      ip: 10.0.1.123
-      access_ip: 10.0.1.123
+      ansible_host: 10.0.1.143
+      ip: 10.0.1.143
+      access_ip: 10.0.1.143
     k8s-dev02-worker04:
-      ansible_host: 10.0.1.124
-      ip: 10.0.1.124
-      access_ip: 10.0.1.124
-    k8s-dev02-worker05:
-      ansible_host: 10.0.1.125
-      ip: 10.0.1.125
-      access_ip: 10.0.1.125
+      ansible_host: 10.0.1.144
+      ip: 10.0.1.144
+      access_ip: 10.0.1.144
+    # k8s-dev02-worker05:
+    #   ansible_host: 10.0.1.145
+    #   ip: 10.0.1.145
+    #   access_ip: 10.0.1.145
   children:
     kube_control_plane:
       hosts:
@@ -44,7 +44,7 @@ all:
         k8s-dev02-worker02:
         k8s-dev02-worker03:
         k8s-dev02-worker04:
-        k8s-dev02-worker05:
+        # k8s-dev02-worker05:
     etcd:
       hosts:
         k8s-dev02-master01:
