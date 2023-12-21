@@ -28,10 +28,10 @@ all:
       ansible_host: 10.0.1.144
       ip: 10.0.1.144
       access_ip: 10.0.1.144
-    # k8s-dev02-worker05:
-    #   ansible_host: 10.0.1.145
-    #   ip: 10.0.1.145
-    #   access_ip: 10.0.1.145
+    k8s-dev02-worker05:
+      ansible_host: 10.0.1.145
+      ip: 10.0.1.145
+      access_ip: 10.0.1.145
   children:
     kube_control_plane:
       hosts:
@@ -44,7 +44,7 @@ all:
         k8s-dev02-worker02:
         k8s-dev02-worker03:
         k8s-dev02-worker04:
-        # k8s-dev02-worker05:
+        k8s-dev02-worker05:
     etcd:
       hosts:
         k8s-dev02-master01:
