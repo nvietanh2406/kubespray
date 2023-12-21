@@ -72,8 +72,8 @@ pip install -r requirements.txt
 ## 4. Copy K8S Cluster's config file
 ```shell
 mkdir /root/.kube 
-rsync root@10.0.1.122:/etc/kubernetes/admin.conf /root/.kube/config
-sed -i 's/127.0.0.1:6443/10.0.1.122:6443/g' /root/.kube/config
+rsync root@10.0.1.111:/etc/kubernetes/admin.conf /root/.kube/config
+sed -i 's/127.0.0.1:6443/10.0.1.111:6443/g' /root/.kube/config
 ```
 ## 5. Verify K8S cluster status:
 ```shell
