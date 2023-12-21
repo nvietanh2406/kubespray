@@ -45,11 +45,11 @@ rm argocd-linux-amd64
 ```
 
 # II. Install Kubespray
-***Please ensure that Ansible root's public ssh key added to all root's home node***
+***Make sure that all K8s root's home nodes have Ansible's public ssh key added.***
 ## 1. Clone DatX kubespray repo
 ```shell
 mkdir -p /opt/kubernetes && cd /opt/kubernetes/ 
-git clone https://git.datx.com.vn/dso/kubespray.git -b cmc-k8s-dev02
+git clone https://git.datx.com.vn/dso/kubespray.git
 cd kubespray
 pip install -r requirements.txt
 ```
