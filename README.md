@@ -96,6 +96,11 @@ helm install longhorn charts/longhorn \
   --namespace longhorn-system \
   --create-namespace
 ```
+Verify:
+```shell
+kubectl get po -n longhorn-system
+```
+
 ### Account
 ```
 datxadmin / eddde262-b4a5-4a20-8bdb-3b7f0984c836
@@ -107,6 +112,10 @@ helm install argocd charts/argocd \
   -f charts/argocd/values.yaml \
   --namespace argocd \
   --create-namespace
+```
+Verify:
+```shell
+kubectl get po -n argocd
 ```
 ### Account
 ```
