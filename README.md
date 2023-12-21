@@ -45,7 +45,7 @@ rm argocd-linux-amd64
 ```
 
 # II. Install Kubespray
-***Please ensure that Ansible root's public ssh key added to all root's home node***
+***Make sure that all K8s root's home nodes have Ansible's public ssh key added.***
 ## 1. Clone DatX kubespray repo
 ```shell
 mkdir -p /opt/kubernetes && cd /opt/kubernetes/ 
@@ -72,8 +72,8 @@ pip install -r requirements.txt
 ## 4. Copy K8S Cluster's config file
 ```shell
 mkdir /root/.kube 
-rsync root@10.0.1.142:/etc/kubernetes/admin.conf /root/.kube/config
-sed -i 's/127.0.0.1:6443/10.0.1.142:6443/g' /root/.kube/config
+rsync root@10.0.1.131:/etc/kubernetes/admin.conf /root/.kube/config
+sed -i 's/127.0.0.1:6443/10.0.1.131:6443/g' /root/.kube/config
 ```
 ## 5. Verify K8S cluster status:
 ```shell
