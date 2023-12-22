@@ -149,6 +149,24 @@ argocd app create argocd-apps \
 # V. Add/Remove a node
 Ref:
 [Link](https://github.com/kubernetes-sigs/kubespray/blob/master/docs/nodes.md)
+## Adding/replacing a worker node
+
+This should be the easiest.
+
+### 1) Add new node to the inventory
+
+### 2) Run `scale.yml`
+
+You can use `--limit=NODE_NAME` to limit Kubespray to avoid disturbing other nodes in the cluster.
+
+### 3) Remove an old node with remove-node.yml
+
+With the old node still in the inventory, run `remove-node.yml`. You need to pass `-e node=NODE_NAME` to the playbook to limit the execution to the node being removed.
+
+If the node you want to remove is not online, you should add `reset_nodes=false` and `allow_ungraceful_removal=true` to your extra-vars: `-e node=NODE_NAME -e reset_nodes=false -e allow_ungraceful_removal=true`.
+Use this flag even when you remove other types of nodes like a control plane or etcd nodes.
+
+### 4) Remove the node from the inventory
 
 # VI. Cleanup
 Reset k8s cluster:
