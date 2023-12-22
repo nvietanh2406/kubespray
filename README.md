@@ -156,6 +156,8 @@ argocd app create argocd-apps \
 ```
 
 # V. Add/Remove a node
+Ref:
+[Link](https://github.com/kubernetes-sigs/kubespray/blob/master/docs/nodes.md)
 
 # VI. Cleanup
 Reset k8s cluster:
