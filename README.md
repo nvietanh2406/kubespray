@@ -84,6 +84,7 @@ kubectl get --raw='/readyz?verbose'
 ```shell
 kubectl apply -f https://k8s.io/examples/admin/dns/dnsutils.yaml
 kubectl get pods dnsutils
+sleep 15
 kubectl exec -i -t dnsutils -- nslookup kubernetes.default
 ```
 
