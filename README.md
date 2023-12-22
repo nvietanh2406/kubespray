@@ -71,7 +71,7 @@ pip install -r requirements.txt
 ```
 ## 4. Copy K8S Cluster's config file
 ```shell
-mkdir /root/.kube 
+mkdir /root/.kube -p
 rsync root@10.0.1.131:/etc/kubernetes/admin.conf /root/.kube/config
 sed -i 's/127.0.0.1:6443/10.0.1.131:6443/g' /root/.kube/config
 ```
@@ -152,4 +152,24 @@ argocd app create argocd-apps \
   --auto-prune \
   --sync-policy auto \
   --upsert
+```
+
+# V. Add/Remove a node
+
+# VI. Cleanup
+Reset k8s cluster:
+```shell
+/usr/local/bin/ansible-playbook \
+    -i inventory/cmc-k8s-dev02/hosts.yaml \
+    --become \
+    --become-user=root \
+    reset.yml
+```
+Delete Longhorn's data directory:
+```shell
+/usr/local/bin/ansible-playbook \
+    -i inventory/cmc-k8s-dev02/hosts.yaml \
+    --become \
+    --become-user=root \
+    clean-longhorn-data.yml
 ```
