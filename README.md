@@ -4,11 +4,11 @@
 | Master      | 10.48.15.11    | tpc-k8s-dev01-master01    | 4vCPU   | 8G RAM    | 100G  |
 | Master      | 10.48.15.12    | tpc-k8s-dev01-master02    | 4vCPU   | 8G RAM    | 100G  |
 | Master      | 10.48.15.13    | tpc-k8s-dev01-master03    | 4vCPU   | 8G RAM    | 100G  |
-| Worker      | 10.48.15.21    | tpc-k8s-dev01-worker01    | 16vCPU  | 48G RAM   | 200G  |
-| Worker      | 10.48.15.22    | tpc-k8s-dev01-worker02    | 16vCPU  | 48G RAM   | 200G  |
-| Worker      | 10.48.15.23    | tpc-k8s-dev01-worker03    | 16vCPU  | 48G RAM   | 200G  |
-| Worker      | 10.48.15.24    | tpc-k8s-dev01-worker04    | 16vCPU  | 48G RAM   | 200G  |
-| Worker      | 10.48.15.25    | tpc-k8s-dev01-worker05    | 16vCPU  | 48G RAM   | 200G  |
+| Worker      | 10.48.15.21    | tpc-k8s-dev01-worker01    | 16vCPU  | 48G RAM   | 300G  |
+| Worker      | 10.48.15.22    | tpc-k8s-dev01-worker02    | 16vCPU  | 48G RAM   | 300G  |
+| Worker      | 10.48.15.23    | tpc-k8s-dev01-worker03    | 16vCPU  | 48G RAM   | 300G  |
+| Worker      | 10.48.15.24    | tpc-k8s-dev01-worker04    | 16vCPU  | 48G RAM   | 300G  |
+| Worker      | 10.48.15.25    | tpc-k8s-dev01-worker05    | 16vCPU  | 48G RAM   | 300G  |
 
 # I. Prerequisites
 ## 1. Install kubectl
