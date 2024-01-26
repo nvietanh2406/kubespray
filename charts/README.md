@@ -8,6 +8,7 @@ helm install longhorn longhorn \
   --create-namespace
 ```
 ### Account
+https://dev-longhorn.datxstg.com
 ```
 datxadmin / eddde262-b4a5-4a20-8bdb-3b7f0984c836
 ```
@@ -20,6 +21,7 @@ helm install argocd argocd \
   --create-namespace
 ```
 ### Account
+https://dev-argocd.datxstg.com
 ```
 admin / 6dea16e5-a9e3-4d1e-9d1a-c4a984fea37e
 ```
