@@ -1,14 +1,15 @@
 # VM Information
-| K8S Role    | IP Addres      | Hostname                  | vCPU    | RAM       | Disk  |
-|-------------| ---------------|---------------------------|---------|-----------|-------|
-| Master      | 10.32.192.11    | hc-k8s-dev01-master01    | 4vCPU   | 8G RAM    | 100G  |
-| Master      | 10.32.192.12    | hc-k8s-dev01-master02    | 4vCPU   | 8G RAM    | 100G  |
-| Master      | 10.32.192.13    | hc-k8s-dev01-master03    | 4vCPU   | 8G RAM    | 100G  |
-| Worker      | 10.32.192.21    | hc-k8s-dev01-worker01    | 16vCPU  | 32G RAM   | 300G  |
-| Worker      | 10.32.192.22    | hc-k8s-dev01-worker02    | 16vCPU  | 32G RAM   | 300G  |
-| Worker      | 10.32.192.23    | hc-k8s-dev01-worker03    | 16vCPU  | 32G RAM   | 300G  |
-| Worker      | 10.32.192.24    | hc-k8s-dev01-worker04    | 16vCPU  | 32G RAM   | 300G  |
-| Worker      | 10.32.192.25    | hc-k8s-dev01-worker05    | 16vCPU  | 32G RAM   | 300G  |
+| K8S Role    | IP Addres      | Hostname                 | vCPU    | RAM       | Disk  |
+|-------------| ---------------|--------------------------|---------|-----------|-------|
+| Ansible     | 10.32.192.99   | hc-ansible-01            | 4vCPU   | 8G RAM    | 50G   | 
+| Master      | 10.32.192.11   | hc-k8s-dev01-master01    | 4vCPU   | 8G RAM    | 100G  |
+| Master      | 10.32.192.12   | hc-k8s-dev01-master02    | 4vCPU   | 8G RAM    | 100G  |
+| Master      | 10.32.192.13   | hc-k8s-dev01-master03    | 4vCPU   | 8G RAM    | 100G  |
+| Worker      | 10.32.192.21   | hc-k8s-dev01-worker01    | 16vCPU  | 32G RAM   | 300G  |
+| Worker      | 10.32.192.22   | hc-k8s-dev01-worker02    | 16vCPU  | 32G RAM   | 300G  |
+| Worker      | 10.32.192.23   | hc-k8s-dev01-worker03    | 16vCPU  | 32G RAM   | 300G  |
+| Worker      | 10.32.192.24   | hc-k8s-dev01-worker04    | 16vCPU  | 32G RAM   | 300G  |
+| Worker      | 10.32.192.25   | hc-k8s-dev01-worker05    | 16vCPU  | 32G RAM   | 300G  |
 
 # I. Prerequisites
 ## 1. Install kubectl
