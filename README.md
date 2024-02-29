@@ -92,6 +92,19 @@ kubectl exec -i -t dnsutils -- nslookup kubernetes.default
 ## 1. Longhorn
 ### Install helm chart
 ```shell
+helm upgrade --install ingress-nginx charts/ingress-nginx \
+  -f charts/ingress-nginx/values.yaml \
+  --namespace ingress-nginx \
+  --create-namespace
+```
+Verify:
+```shell
+kubectl get po -n longhorn-system
+```
+
+## 2. Longhorn
+### Install helm chart
+```shell
 helm install longhorn charts/longhorn \
   -f charts/longhorn/values.yaml \
   --namespace longhorn-system \
@@ -106,7 +119,7 @@ kubectl get po -n longhorn-system
 ```
 datxadmin / eddde262-b4a5-4a20-8bdb-3b7f0984c836
 ```
-## 2. ArgoCD
+## 3. ArgoCD
 ### Install helm chart
 ```shell
 helm install argocd charts/argocd \
