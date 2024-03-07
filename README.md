@@ -54,7 +54,22 @@ git clone https://git.datx.com.vn/dso/kubespray.git -b hc-k8s-dev01
 cd kubespray
 pip install -r requirements.txt
 ```
-## 2. Setup nodes requestment
+
+## 2. Add ssh key to Ansible
+```shell
+cp ssh/id_rsa* /root/.ssh/
+chmod 400 /root/.ssh/id_rsa
+eval "$(ssh-agent -s)"
+ssh-add /root/.ssh/id_rsa
+```
+## 3. Add ansible's public key to all node
+***Do on all k8s node (Master and Worker node)***
+```shell
+echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDgl4Co26TD4HO+ag++Ktv90m2rQg+wdIBkuRYn3r3+4vEXac3lUPM0ZvppeZ2UbvUIJjJ04CIJHJleLP8dUqj4qJb9VwQOw4ymdt50GVTud9cFX38UGqJtBwhz1TUf14/2qBXCVAfXYtTXHoGtgCL8HzCWaT1gtelXtF5Xl7Jhtc+OGjq025sC0OmHmejVfPOYifVaJbyQ4lScw8xGDPdSfFFICM1X2ZhDfppwwMSWeDWQCRLwRqJpTPzqjBrUQcYPpoZIV1g2PdO5EV8pLIFYBGrfMsmkyd06wgDCkRG6YczqwOh/JnPRtKSKwo3o3aBcn/pVcIGRX/5oc70EwO+TEKPeVmDLZ8raxZiOLiaBsMqWjWpbMURtrHCWXHw9eCfU98cT0BulH5lJ7sKCCC0oeTAX00JS6YRNXDc7YR/P9ptsiwTvR9fIQDfRuvRDjz+WxHo75zvZH9PfmkZ9L3Y2CqVsePTALTsvJE/8mOFGAIbtENlNRoMs5KlVPJWzizIKrN5dKMI4R5nvP0SuOGgMffSmiWEu2PeBiwsxwovXl1Znhz64AqBxBYRoAy7mGtuWZPGmLxtu7be2yr/Ghl5iOFdxkpZZRU4sHW6fgPUUi4OMOXeOBeqbDU+UG70VuaWcYAFRUB8/UbwFuNWwGz1R2KK9fbu++lsF/C/WZy5cZw== root@ansible" > /root/.ssh/authorized_keys
+chmod 600 /root/.ssh/authorized_keys
+```
+
+## 4. Setup nodes requestment
 ```shell
 /usr/local/bin/ansible-playbook \
     -i inventory/hc-k8s-dev01/hosts.yaml \
@@ -62,7 +77,7 @@ pip install -r requirements.txt
     --become-user=root \
     install-node-requestment.yml
 ```
-## 3. Deploy kubespray with ansible Playbook
+## 5. Deploy kubespray with ansible Playbook
 ```shell
 /usr/local/bin/ansible-playbook \
     -i inventory/hc-k8s-dev01/hosts.yaml \
@@ -70,22 +85,22 @@ pip install -r requirements.txt
     --become-user=root \
     cluster.yml
 ```
-## 4. Copy K8S Cluster's config file
+## 6. Copy K8S Cluster's config file
 ```shell
 mkdir /root/.kube -p
 rsync root@10.32.192.11:/etc/kubernetes/admin.conf /root/.kube/config
 sed -i 's/127.0.0.1:6443/10.32.192.11:6443/g' /root/.kube/config
 ```
-## 5. Verify K8S cluster status:
+## 7. Verify K8S cluster status:
 ```shell
 kubectl get node -o wide
 kubectl get --raw='/readyz?verbose'
 ```
-## 6. Verify DNS Working:
+## 8. Verify DNS Working:
 ```shell
 kubectl apply -f https://k8s.io/examples/admin/dns/dnsutils.yaml
 kubectl get pods dnsutils
-sleep 15
+sleep 60
 kubectl exec -i -t dnsutils -- nslookup kubernetes.default
 ```
 
