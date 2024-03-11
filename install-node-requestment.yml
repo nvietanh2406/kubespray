@@ -9,7 +9,5 @@
         sudo systemctl enable iscsid rpcbind --now
         systemctl disable multipathd
         systemctl stop multipathd
+        rm -rf /data/longhorn-pvc
         mkdir -p /data/longhorn-pvc
-        sed -i 's/--web.listen-address=:9100/--web.listen-address=:9101/' /etc/systemd/system/node_exporter.service
-        systemctl daemon-reload
-        systemctl restart node_exporter.service
