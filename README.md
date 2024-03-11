@@ -150,6 +150,7 @@ kubectl get po -n argocd
 ```
 ### Account
 https://dev-argocd.datxstg.com
+https://10.32.192.22:30080
 ```
 admin / 6dea16e5-a9e3-4d1e-9d1a-c4a984fea37e
 ```
