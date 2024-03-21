@@ -78,6 +78,12 @@ chmod 600 /root/.ssh/authorized_keys
     install-node-requestment.yml
 ```
 ## 5. Deploy kubespray with ansible Playbook
+***Please run this command under byobu-screen ***
+
+Run this command if the ternminal does not run under a byobu-screen session:
+```shell
+byobu-scree -DDR k8s
+```
 ```shell
 /usr/local/bin/ansible-playbook \
     -i inventory/hc-k8s-dev01/hosts.yaml \
