@@ -78,7 +78,7 @@ chmod 600 /root/.ssh/authorized_keys
     install-node-requestment.yml
 ```
 ## 5. Deploy kubespray with ansible Playbook
-***Please run this command under byobu-screen ***
+***Please run this command under byobu-screen***
 
 Run this command if the ternminal does not run under a byobu-screen session:
 ```shell
