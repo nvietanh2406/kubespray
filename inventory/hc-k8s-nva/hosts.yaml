@@ -1,0 +1,35 @@
+all:
+  hosts:
+    hc-k8s-nva-master01:
+      ansible_host: 10.32.224.230
+      ip: 10.32.224.230
+      access_ip: 10.32.224.230
+    hc-k8s-nva-worker01:
+      ansible_host: 10.32.224.231
+      ip: 10.32.224.231
+      access_ip: 10.32.224.231
+    hc-k8s-nva-worker02:
+      ansible_host: 10.32.224.232
+      ip: 10.32.224.232
+      access_ip: 10.32.224.232
+  children:
+    kube_control_plane:
+      hosts:
+        hc-k8s-nva-master01:
+        hc-k8s-nva-worker01:
+        hc-k8s-nva-worker02:
+    kube_node:
+      hosts:
+        hc-k8s-nva-worker01:
+        hc-k8s-nva-worker02:
+    etcd:
+      hosts:
+        hc-k8s-nva-master01:
+        hc-k8s-nva-worker01:
+        hc-k8s-nva-worker02:
+    k8s_cluster:
+      children:
+        kube_control_plane:
+        kube_node:
+    calico_rr:
+      hosts: {}
