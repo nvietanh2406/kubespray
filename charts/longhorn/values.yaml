@@ -239,7 +239,8 @@ ingress:
   ## Can replace the kubernetes.io/ingress.class annotation on v1.18+
   ingressClassName: nginx
 
-  host: dev-longhorn.datxstg.com
+  #host: dev-longhorn.datxstg.com
+  host: dev-longhorn.k8s-stg.com
 
   ## Set this to true in order to enable TLS on the ingress record
   tls: false
