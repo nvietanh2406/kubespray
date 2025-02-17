@@ -27,7 +27,7 @@ all:
   children:
     kube_control_plane:
       hosts:
-        k8s-nva-master1:
+        k8s-nva-master:
     kube_node:
       hosts:
         k8s-nva-worker1:
@@ -37,7 +37,7 @@ all:
         k8s-nva-worker5:
     etcd:
       hosts:
-        k8s-nva-master1:
+        k8s-nva-master:
     k8s_cluster:
       children:
         kube_control_plane:
