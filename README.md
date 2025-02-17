@@ -72,7 +72,7 @@ chmod 600 /root/.ssh/authorized_keys
 ## 4. Setup nodes requestment
 ```shell
 /usr/local/bin/ansible-playbook \
-    -i inventory/hc-k8s-dev01/hosts.yaml \
+    -i inventory/k8s-nva-dev/hosts.yaml \
     --become \
     --become-user=root \
     install-node-requestment.yml
