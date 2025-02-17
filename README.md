@@ -50,7 +50,7 @@ rm argocd-linux-amd64
 ## 1. Clone DatX kubespray repo
 ```shell
 mkdir -p /opt/kubernetes && cd /opt/kubernetes/ 
-git clone https://git.datx.com.vn/dso/kubespray.git -b hc-k8s-dev01
+git clone https://github.com/nvietanh2406/kubespray.git -b k8s-nva-dev01
 cd kubespray
 pip install -r requirements.txt
 ```
