@@ -86,7 +86,7 @@ byobu-scree -DDR k8s
 ```
 ```shell
 /usr/local/bin/ansible-playbook \
-    -i inventory/hc-k8s-dev01/hosts.yaml \
+    -i inventory/k8s-nva-dev/hosts.yaml \
     --become \
     --become-user=root \
     cluster.yml
@@ -94,8 +94,8 @@ byobu-scree -DDR k8s
 ## 6. Copy K8S Cluster's config file
 ```shell
 mkdir /root/.kube -p
-rsync root@10.32.192.11:/etc/kubernetes/admin.conf /root/.kube/config
-sed -i 's/127.0.0.1:6443/10.32.192.11:6443/g' /root/.kube/config
+rsync root@10.32.1.20:/etc/kubernetes/admin.conf /root/.kube/config
+sed -i 's/127.0.0.1:6443/10.32.1.20:6443/g' /root/.kube/config
 ```
 ## 7. Verify K8S cluster status:
 ```shell
