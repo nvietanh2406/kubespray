@@ -2,14 +2,14 @@
 | K8S Role    | IP Addres      | Hostname                 | vCPU    | RAM       | Disk  |
 |-------------| ---------------|--------------------------|---------|-----------|-------|
 | Ansible     | 10.32.192.99   | hc-ansible-01            | 4vCPU   | 8G RAM    | 50G   | 
-| Master      | 10.32.192.11   | hc-k8s-dev01-master01    | 4vCPU   | 8G RAM    | 100G  |
-| Master      | 10.32.192.12   | hc-k8s-dev01-master02    | 4vCPU   | 8G RAM    | 100G  |
-| Master      | 10.32.192.13   | hc-k8s-dev01-master03    | 4vCPU   | 8G RAM    | 100G  |
-| Worker      | 10.32.192.21   | hc-k8s-dev01-worker01    | 16vCPU  | 32G RAM   | 300G  |
-| Worker      | 10.32.192.22   | hc-k8s-dev01-worker02    | 16vCPU  | 32G RAM   | 300G  |
-| Worker      | 10.32.192.23   | hc-k8s-dev01-worker03    | 16vCPU  | 32G RAM   | 300G  |
-| Worker      | 10.32.192.24   | hc-k8s-dev01-worker04    | 16vCPU  | 32G RAM   | 300G  |
-| Worker      | 10.32.192.25   | hc-k8s-dev01-worker05    | 16vCPU  | 32G RAM   | 300G  |
+| Master      | 10.32.192.11   | k8s-nva-dev-master01    | 4vCPU   | 8G RAM    | 100G  |
+| Master      | 10.32.192.12   | k8s-nva-dev-master02    | 4vCPU   | 8G RAM    | 100G  |
+| Master      | 10.32.192.13   | k8s-nva-dev-master03    | 4vCPU   | 8G RAM    | 100G  |
+| Worker      | 10.32.192.21   | k8s-nva-dev-worker01    | 16vCPU  | 32G RAM   | 300G  |
+| Worker      | 10.32.1.20   | k8s-nva-dev-worker02    | 16vCPU  | 32G RAM   | 300G  |
+| Worker      | 10.32.192.23   | k8s-nva-dev-worker03    | 16vCPU  | 32G RAM   | 300G  |
+| Worker      | 10.32.192.24   | k8s-nva-dev-worker04    | 16vCPU  | 32G RAM   | 300G  |
+| Worker      | 10.32.192.25   | k8s-nva-dev-worker05    | 16vCPU  | 32G RAM   | 300G  |
 
 # I. Prerequisites
 ## 1. Install kubectl
@@ -156,7 +156,7 @@ kubectl get po -n argocd
 ```
 ### Account
 https://dev-argocd.datxstg.com
-https://10.32.192.22:30080
+https://10.32.1.20:30080
 ```
 admin / 6dea16e5-a9e3-4d1e-9d1a-c4a984fea37e
 ```
@@ -164,7 +164,7 @@ admin / 6dea16e5-a9e3-4d1e-9d1a-c4a984fea37e
 ## 1. ArgoCD
 ### Login to the ArgoCD server
 ```shell
-argocd login 10.32.192.22:30080 \
+argocd login 10.32.1.20:30080 \
   --username admin \
   --password 6dea16e5-a9e3-4d1e-9d1a-c4a984fea37e \
   --insecure
@@ -201,7 +201,7 @@ Ref:
 Reset k8s cluster:
 ```shell
 /usr/local/bin/ansible-playbook \
-    -i inventory/hc-k8s-dev01/hosts.yaml \
+    -i inventory/k8s-nva-dev/hosts.yaml \
     --become \
     --become-user=root \
     reset.yml
@@ -209,7 +209,7 @@ Reset k8s cluster:
 Delete Longhorn's data directory:
 ```shell
 /usr/local/bin/ansible-playbook \
-    -i inventory/hc-k8s-dev01/hosts.yaml \
+    -i inventory/k8s-nva-dev/hosts.yaml \
     --become \
     --become-user=root \
     clean-longhorn-data.yml
