@@ -114,6 +114,8 @@ kubectl exec -i -t dnsutils -- nslookup kubernetes.default
 ## 1. Ingress Nginx
 ### Install helm chart
 ```shell
+kubectl delete ingressclass nginx
+
 helm upgrade --install ingress-nginx charts/ingress-nginx \
   -f charts/ingress-nginx/values.yaml \
   --namespace ingress-nginx \
