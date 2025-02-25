@@ -173,7 +173,7 @@ argocd login 10.32.1.20:30080 \
 ```
 ### Create the new repo
 ```shell
-argocd repo add https://git.datx.com.vn/datx-k8s/k8s-intervpc.git \
+argocd repo add https://github.com/nvietanh2406/k8s-prd-bigdta.git \
   --username argocd \
   --password "973ecae2-a9c2-4cfe-9e29-730366fd4517" \
   --insecure-skip-server-verification
@@ -183,7 +183,7 @@ argocd repo add https://git.datx.com.vn/datx-k8s/k8s-intervpc.git \
 ```shell
 argocd app create argocd-apps \
   --name argocd-apps \
-  --repo https://git.datx.com.vn/datx-k8s/k8s-intervpc.git \
+  --repo https://github.com/nvietanh2406/k8s-prd-bigdta.git \
   --revision master \
   --path helm-charts/argocd-apps \
   --values values.yaml \
