@@ -118,6 +118,8 @@ kubectl delete ingressclass nginx
 
 helm upgrade --install ingress-nginx charts/ingress-nginx \
   -f charts/ingress-nginx/values.yaml \
+  --set controller.ingressClassResource.name=nginx \
+  --set controller.ingressClassResource.enabled=true \
   --namespace ingress-nginx \
   --create-namespace
 ```
