@@ -1,0 +1,58 @@
+all:
+  hosts:
+    tpc-k8s-dev01-master01:
+      ansible_host: 10.48.15.11
+      ip: 10.48.15.11
+      access_ip: 10.48.15.11
+    tpc-k8s-dev01-master02:
+      ansible_host: 10.48.15.12
+      ip: 10.48.15.12
+      access_ip: 10.48.15.12
+    tpc-k8s-dev01-master03:
+      ansible_host: 10.48.15.13
+      ip: 10.48.15.13
+      access_ip: 10.48.15.13
+    tpc-k8s-dev01-worker01:
+      ansible_host: 10.48.15.21
+      ip: 10.48.15.21
+      access_ip: 10.48.15.21
+    tpc-k8s-dev01-worker02:
+      ansible_host: 10.48.15.22
+      ip: 10.48.15.22
+      access_ip: 10.48.15.22
+    tpc-k8s-dev01-worker03:
+      ansible_host: 10.48.15.23
+      ip: 10.48.15.23
+      access_ip: 10.48.15.23
+    tpc-k8s-dev01-worker04:
+      ansible_host: 10.48.15.24
+      ip: 10.48.15.24
+      access_ip: 10.48.15.24
+    tpc-k8s-dev01-worker05:
+      ansible_host: 10.48.15.25
+      ip: 10.48.15.25
+      access_ip: 10.48.15.25
+  children:
+    kube_control_plane:
+      hosts:
+        tpc-k8s-dev01-master01:
+        tpc-k8s-dev01-master02:
+        tpc-k8s-dev01-master03:
+    kube_node:
+      hosts:
+        tpc-k8s-dev01-worker01:
+        tpc-k8s-dev01-worker02:
+        tpc-k8s-dev01-worker03:
+        tpc-k8s-dev01-worker04:
+        tpc-k8s-dev01-worker05:
+    etcd:
+      hosts:
+        tpc-k8s-dev01-master01:
+        tpc-k8s-dev01-master02:
+        tpc-k8s-dev01-master03:
+    k8s_cluster:
+      children:
+        kube_control_plane:
+        kube_node:
+    calico_rr:
+      hosts: {}
