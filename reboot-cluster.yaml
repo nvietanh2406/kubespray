@@ -1,0 +1,9 @@
+---
+- name: Reboot all nodes of cluster
+  hosts: all
+  become: true
+  tasks:
+    - name: Reboot now
+      shell: |
+        reboot now
+

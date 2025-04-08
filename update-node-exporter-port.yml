@@ -1,0 +1,10 @@
+---
+- name: Setup node requestment
+  hosts: all
+  become: true
+  tasks:
+    - name: Update node-exporter port
+      shell: |
+        sed -i 's/--web.listen-address=:9100/--web.listen-address=:9101/' /etc/systemd/system/node_exporter.service
+        systemctl daemon-reload
+        systemctl restart node_exporter.service

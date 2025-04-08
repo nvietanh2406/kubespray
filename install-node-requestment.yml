@@ -1,0 +1,13 @@
+---
+- name: Setup node requestment
+  hosts: all
+  become: true
+  tasks:
+    - name: Run multiple commands
+      shell: |
+        sudo apt update && apt install nfs-common open-iscsi -y
+        sudo systemctl enable iscsid rpcbind --now
+        systemctl disable multipathd
+        systemctl stop multipathd
+        rm -rf /data/longhorn-pvc
+        mkdir -p /data/longhorn-pvc

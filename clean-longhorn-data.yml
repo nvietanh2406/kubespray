@@ -1,0 +1,11 @@
+---
+- name: Remove and re-create Longhorn data directory
+  hosts: all
+  become: true
+  tasks:
+    - name: Delete old longhorn data dir
+      shell: |
+        rm -rf /data/longhorn-pvc
+    - name: Create the new longhorn data dir
+      shell: |
+        mkdir -p /data/longhorn-pvc
