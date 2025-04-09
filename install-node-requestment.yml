@@ -11,3 +11,4 @@
         systemctl stop multipathd
         rm -rf /data/longhorn-pvc
         mkdir -p /data/longhorn-pvc
+        sudo apt install -y python3 python3-pip
